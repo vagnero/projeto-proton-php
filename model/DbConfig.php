@@ -6,7 +6,7 @@ class DbConfig {
     // Atributos, configuração para conectar ao banco de dados
     private $_host = 'localhost';
     private $_username ='root';
-    private $_password =$vagner;
+    private $_password = "{$vagner}";
     private $_database ='protoon_php';
     public $connection;
 
