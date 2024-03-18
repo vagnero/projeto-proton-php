@@ -20,19 +20,19 @@ class ControllerMunicipe{
     public function registerEndereco(){
         if (isset($_POST['Submit'])){ 
             $cep = $this->crud->connection->escape_string($_POST['cep']);
-            $uf = $this->crud->escape_string($_POST['uf']);
+            $estado = $this->crud->escape_string($_POST['estado']);
             $cidade = $this->crud->connection->escape_string($_POST['cidade']);
             $bairro = $this->crud->connection->escape_string($_POST['bairro']);
             $rua = $this->crud->connection->escape_string($_POST['rua']);
             $numero = $this->crud->connection->escape_string($_POST['numero']);
             $complemento = $this->crud->connection->escape_string($_POST['complemento']);
-            $sql_endereco = "INSERT INTO enderecos (cep, uf, cidade, bairro, rua, numero, complemento) VALUES ('$cep', '$uf', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
+            $sql_endereco = "INSERT INTO enderecos (cep, estado, cidade, bairro, rua, numero, complemento) VALUES ('$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')";
             
-            $msgEndereco = $this->validation->check_empty($_POST, array('cep', 'uf', 'cidade', 'bairro', 'rua', 'numero', 'complemento'));
+            $msgEndereco = $this->validation->check_empty($_POST, array('cep', 'estado', 'cidade', 'bairro', 'rua', 'numero', 'complemento'));
             
             if ($msgEndereco == null){
-                $query = $this->crud->execute("INSERT INTO enderecos(rua, bairro, cidade, uf, cep, nrEndereco, complemento)
-                VALUES('$cep', '$uf', '$cidade', '$bairro', '$rua', '$numero', '$complemento')");
+                $query = $this->crud->execute("INSERT INTO enderecos(rua, bairro, cidade, estado, cep, nrEndereco, complemento)
+                VALUES('$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')");
                 if($query){
                     return $this->crud->getLastInsertId();
                 }else{

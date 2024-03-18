@@ -1,9 +1,12 @@
 <?php
+$vagner = "1234";
+$audrey = "";
+$jose = "";
 class DbConfig {
     // Atributos, configuração para conectar ao banco de dados
     private $_host = 'localhost';
     private $_username ='root';
-    private $_password ='';
+    private $_password =$vagner;
     private $_database ='protoon_php';
     public $connection;
 

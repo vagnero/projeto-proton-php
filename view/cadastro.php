@@ -28,8 +28,8 @@
     <input class="formsCadastro" required minlength="9" name="cep" type="text" id="cep" value="<?php if (isset($_POST['cep'])) echo $_POST['cep']; ?>" size="10" maxlength="9">
   </label>
 
-  <label for="uf" class="form-label">Estado
-    <input class="formsCadastro" name="uf" type="text" maxlength="2" id="uf" size="2" value="<?php if (isset($_POST['uf'])) echo $_POST['uf']; ?>">
+  <label for="estado" class="form-label">Estado
+    <input class="formsCadastro" name="estado" type="text" maxlength="2" id="uf" size="2" value="<?php if (isset($_POST['estado'])) echo $_POST['estado']; ?>">
   </label>
 </div>
 <div style="margin-top: 10px;">
