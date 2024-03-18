@@ -11,7 +11,7 @@
 <div class="body-form">
     <h1 style="margin-top: 10px; font-size: 30px;">Cadastro de Usuário</h1>
 
-    <form action="" method="post">
+    <form action=""  method="post">
 
 <div>
   <label for="nome" class="form-label">Nome<span style="color:red " class="required-symbol">*</span>
@@ -68,13 +68,13 @@
 </div>
 
 <div style="margin-top: 30px;">
-  <button type="submit" style="margin-inline-end: 10px " class="form">Cadastrar</button>
+  <button type="submit" style="margin-inline-end: 10px " class="form" name="Submit">Cadastrar</button>
   <button type="button" class="btn btn-outline-dark" title="Clique para voltar ao inicio do Site" onclick='window.location.href ="index.php"'>Voltar</button>
 </div>
 </form>
 <?php  
 if(isset($_POST['Submit'])){
-    $ControllerMunicipe->registerMunicipe();
+    $controllerMunicipe->registerMunicipe();
 }
 
 
