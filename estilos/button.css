@@ -1,0 +1,49 @@
+@media (max-width: 430px) {
+    button {
+        font-size: 0.8em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+button[type="button"] {
+    background-color: #016974; /* Cor de fundo azul principal */
+    color: #FFF; /* Cor do texto branco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para os botões no formulário principal ao passar o mouse */
+button:hover[type="button"] {
+    background-color: #023b30; /* Cor de fundo azul mais escura ao passar o mouse */
+}
+
+button[type="submit"] {
+    background-color: #016974; /* Cor de fundo azul principal */
+    color: #FFF; /* Cor do texto branco */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para os botões no formulário principal ao passar o mouse */
+button:hover[type="submit"] {
+    background-color: #023b30; /* Cor de fundo azul mais escura ao passar o mouse */
+}
+
+button.form {
+    margin: auto;
+}
+
+button.servicos {
+    font-size: 1em;
+}
+@media (min-width: 800px) {
+    button.servicos {
+        font-size: 2em;
+    }
+}

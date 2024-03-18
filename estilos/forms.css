@@ -1,0 +1,75 @@
+form {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+}
+
+div.body-form {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px;
+    border: ridge 2px #007bff00;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 50vw;
+}
+
+
+div.body-form {
+    padding: 1px;
+    width: 90vw;
+}
+
+input {
+    margin: auto;
+}
+
+.form-floating {
+    margin: auto;
+    width: 80vw;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+input[type="text"].endereco, [type=email], [type=password] {
+    width: 80vw;
+}
+
+input.numero {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    text-align: left;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+@media (min-width: 600px) and (max-width: 2500px) {
+    div.body-form {
+        padding: 1px;
+        max-width: 50vw;
+    }
+
+    .form-floating {
+        width: 40vw;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"].endereco, [type=email], [type=password] {
+        width: 30vw;
+    }
+}  
+
+.required-symbol {
+    font-weight: bold; /* Pode definir negrito ou outra estilização desejada para o asterisco */
+    margin-left: 5px; /* Adicione margem à direita do asterisco para separá-lo do texto */
+    color: #ff0000; /* Defina a cor vermelha ou a cor desejada para as labels obrigatórias */
+}
+  
+

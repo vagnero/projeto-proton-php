@@ -1,0 +1,152 @@
+* {
+    vertical-align: bottom;
+    text-align: center;
+    margin: auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8ef;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 60vh;
+}
+
+h1 {
+    color: #09717d;
+    font-size: 3em;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    /* Adiciona um espaçamento entre as letras */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Adiciona uma fonte alternativa */
+    text-shadow: 2px 2px 4px rgba(52, 152, 219, 0.4);
+    /* Muda a sombra para combinar com a cor do texto */
+}
+
+
+@media (max-width: 840px) {
+    h1 {
+        font-size: 1em;
+    }
+
+    body.consultar {
+        width: 80vw;
+    }
+}
+
+@media (min-width: 840px) and (max-width: 1220px) {
+    h1 {
+        font-size: 2em;
+    }
+}
+
+.container {
+    padding: 15px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.784);
+    box-shadow: 0 4px 8px rgba(10, 134, 103, 0.141)
+}
+
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+h1 span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+h2 {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    font-size: 23px;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+form {
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+div.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f8ef;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    margin: auto;
+    width: 80vw;
+}
+
+#leitorBtn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#leitorBtn img {
+    width: 35px;
+    /* Ajuste o tamanho conforme necessário */
+    height: 35px;
+    /* Ajuste o tamanho conforme necessário */
+    filter: invert(100%);
+    /* Inverte as cores, tornando a imagem branca */
+
+}
+
+/*------------------------------------ CONTATO------------------------------------------*/
+
+.contato {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contato img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.midia_social {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.midia_social img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}

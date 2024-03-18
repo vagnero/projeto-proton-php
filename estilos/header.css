@@ -1,0 +1,32 @@
+header {
+    margin-bottom: 20px;    
+}
+
+.d-flex {
+    margin-top: 1px;
+}
+
+.img-pesquisa {
+    width: 25px;
+    height: 25px;
+}
+
+.img-logout {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.img-logout:hover {
+    background-color: #888282;
+}
+
+.logout {
+    color: #e2dddd;
+}
+.logout:hover {
+    color: #888282;
+}
