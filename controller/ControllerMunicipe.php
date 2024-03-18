@@ -74,6 +74,10 @@ class ControllerMunicipe{
                 }
             }
         }
-}
+    }
+    public function UpdateMunicipe(){ // TODO: Função para atualizar municipes no banco de dados
+        if (isset($_POST['Submit'])) {
+
+    }
 }
 ?>
