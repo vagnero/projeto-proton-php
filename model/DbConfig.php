@@ -5,7 +5,7 @@ class DbConfig {
     private $_username ='root';
     private $_password ='1234';
     private $_database ='protoon_php';
-    protected $connection;
+    public $connection;
 
     // Métodos
     public function __construct(){ //Contstrutor do DbConfig
