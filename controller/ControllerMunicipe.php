@@ -14,6 +14,8 @@ class ControllerMunicipe{
         $this->crud = new Crud(); //instâcia o objeto crud
         $this->validation = new Validation(); //instância o objeto validation
     }
+
+    
     public function registerEndereco(){
         if (isset($_POST['Submit'])){ 
             $cep = $this->crud->escape_string($_POST['cep']);
