@@ -23,11 +23,11 @@ session_start();
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 
 
-  <link rel="stylesheet" href="Estilos/style.css">
-  <link rel="stylesheet" href="Estilos/header.css">
-  <link rel="stylesheet" href="Estilos/button.css">
-  <link rel="stylesheet" href="Estilos/footer.css">
-  <link rel="stylesheet" href="Estilos/formsCadastro.css">
+  <link rel="stylesheet" href="../estilos/style.css">
+  <link rel="stylesheet" href="../estilos/header.css">
+  <link rel="stylesheet" href="../estilos/button.css">
+  <link rel="stylesheet" href="../estilos/footer.css">
+  <link rel="stylesheet" href="../estilos/formsCadastro.css">
 
   <title>Proto-On</title>
 </head>
