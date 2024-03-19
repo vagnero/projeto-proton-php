@@ -31,7 +31,7 @@ class ControllerMunicipe{
             $msgEndereco = $this->validation->check_empty($_POST, array('cep', 'estado', 'cidade', 'bairro', 'rua', 'numero', 'complemento'));
             
             if ($msgEndereco == null){
-                $query = $this->crud->execute("INSERT INTO enderecos(rua, bairro, cidade, estado, cep, nrEndereco, complemento)
+                $query = $this->crud->execute("INSERT INTO enderecos(cep, estado, cidade, bairro, rua, numero, complemento)
                 VALUES('$cep', '$estado', '$cidade', '$bairro', '$rua', '$numero', '$complemento')");
                 if($query){
                     return $this->crud->getLastInsertId();

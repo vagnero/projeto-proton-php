@@ -74,6 +74,7 @@
 </form>
 <?php  
 if(isset($_POST['Submit'])){
+  echo"Chegou aqui";
     $controllerMunicipe->registerMunicipe();
 }
 
