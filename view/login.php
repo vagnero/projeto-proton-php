@@ -1,55 +1,13 @@
-<!-- 
-session_start();
--->
-
 <?php
 
-ob_start(); // inicia o buffer de saída
+ob_start();
 include('header.php');
 include('../model/DbConfig.php');
+include_once '../controller/LoginMunicipe.php';
+$loginMunicipe = new LoginMunicipe();
 ?>
-
     <div class="body-form">
         <h1 style="margin-top: 10px; font-size: 30px;">Login</h1>
-        <?php
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!isset($_POST['email']) || empty($_POST['email'])) {
-                echo "Preencha o seu email";
-            } else if (empty($_POST['senha'])) {
-                echo "Preencha sua senha";
-            } else {
-                $email = $mysqli->real_escape_string($_POST['email']);
-                $senha = $mysqli->real_escape_string($_POST['senha']);
-
-                $sql_code = "SELECT * FROM municipes WHERE email = '$email' Limit 1";
-                $sql_exec = $mysqli->query($sql_code) or die($mysqli->error);
-
-                $quantidade = $sql_exec->num_rows;
-
-                if ($quantidade == 1) {
-                    $usuario = $sql_exec->fetch_assoc();
-
-                    if (password_verify($senha, $usuario['senha'])) {
-                        if (!isset($_SESSION)) {
-                            session_start();
-                        }
-
-                        $_SESSION['id'] = $usuario['idMunicipe'];
-                        $_SESSION['nome'] = $usuario['nome'];
-                        $_SESSION['senha'] = $usuario['senha'];
-
-                        echo "<script> window.onload = function() {alert('TESTE OK');};</script>";
-                        exit(); // Garante que o código para de ser executado após o redirecionamento
-                    } else {
-                        echo "<script> window.onload = function() {alert('Senha incorreta!');};</script>";
-                    }
-                } else {
-                    echo "<script> window.onload = function() {alert('E-mail e senha incorretos!');};</script>";
-                }
-            }
-        }
-        ?>
 
         <form action="" method="post">
             <label for="email" class="form-label">Email</label>
@@ -67,7 +25,7 @@ include('../model/DbConfig.php');
                     </td>
                 </tr>
             </table>
-            <button type="submit" class="form">Entrar</button>
+            <button type="submit" class="form" name="submit">Entrar</button>
             <button type="button" class="btn btn-outline-dark voltar" onclick='window.location.href ="index.php"'>Voltar</button>
         </form>
     </div>
@@ -81,4 +39,9 @@ include('../model/DbConfig.php');
     <script src="leitor.js"></script>
 </body>
 
+<?php
+if(isset($_POST['submit'])){
+    $loginMunicipe->logar();
+}
+?>
 </html>

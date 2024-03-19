@@ -59,5 +59,21 @@ class Crud extends DbConfig{ //a class crud herda os métodos/atributos de dbcon
         }
         return true; //retorna true para poder atualizar o elemento
     }
+
+    public function select($query){
+        $result = $this->connection->query($query);
+
+        if ($result) {
+            $data = array();
+
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+
+            return $data;
+        } else {
+            return false;
+        }
+    }
 }
 ?>
