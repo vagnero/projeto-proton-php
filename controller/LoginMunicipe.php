@@ -26,7 +26,7 @@ class LoginMunicipe
 
         if ($result) {
             $senhaArm = $result[0]['senha'];
-            if ($senha === $senhaArm) { // senha do banco = igual senha armazenada
+            if (password_verify($senha, $senhaArm)) { // senha do banco = igual senha armazenada com hash_Password
                 return true;
             }
         }
