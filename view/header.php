@@ -108,16 +108,16 @@ session_start();
             }else{
               echo "
               <div class='avatar-container'>
-                  <div class='avatar' id='avatar' onclick='toggleMenu()'>
+                  <div class='avatar' id='avatar'>
                   
-                      <img src='../imagens/cidadao.jpg' alt='Foto do Usuário'>
+                      <img class='cidadao' id='cidadao' src='../imagens/cidadao.jpg' alt='Foto do Usuário'>
                   </div>
                   <div class='menu' id='menu'>
                       <ul>
                           <div class ='perfilMenu'>
                           <li><a href='./perfil-user.php' style='font-weight: bold;'>Perfil</a></li>
                           <li><a href='./suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
-                          <li><a href='../../Controller/LogoutUser.php' style='font-weight: bold;'>Sair</a></li>
+                          <li><a href='../controller/LogoutMunicipe.php' style='font-weight: bold;'>Sair</a></li>
                           </div>
                       </ul>
                   </div>

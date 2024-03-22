@@ -30,12 +30,15 @@ body {
     top: 100%; /* Alteração para alinhar o menu abaixo do avatar */
     background-color: #fff; /* Mudança de cor do menu */
     border: 1px solid #ccc;
-    border-radius: 5px; /* Adicionando borda arredondada ao menu */
+    border-radius: 15px; /* Adicionando borda arredondada ao menu */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1;
     width: 220px;
     left: 50%; /* Centralizando o menu */
     transform: translateX(-50%); /* Centralizando o menu */
+}
+.perfilMenu a{
+    color: #09717d;
 }
 
 .menu ul {
