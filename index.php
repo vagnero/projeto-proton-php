@@ -105,10 +105,10 @@
                   <div class='menu' id='menu'>
                       <ul>
                           <div class ='perfilMenu'>
-                          <li><a href='./perfil-user.php' style='font-weight: bold;'>Perfil</a></li>
+                          <li><a href='view/updateMunicipe.php' style='font-weight: bold;'>Perfil</a></li>
                           <li><a href='./historico-compra.php' style='font-weight: bold;'>Compras</a></li>
                           <li><a href='./suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
-                          <li><a href='../../Controller/LogoutUser.php' style='font-weight: bold;'>Sair</a></li>
+                          <li><a href='controller/LogoutMunicipe.php' style='font-weight: bold;'>Sair</a></li>
                           </div>
                       </ul>
                   </div>
