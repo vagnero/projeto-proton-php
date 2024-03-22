@@ -156,7 +156,7 @@
     <div id="mensagemAcessibilidade"></div>
 
     <div>
-      <button type="button" class="btn btn-outline-primary" title="Clique aqui para fazer Login no Site" onclick='window.location.href ="login.php"'>Entrar</button>
+      <button type="button" class="btn btn-outline-primary" title="Clique aqui para fazer Login no Site" onclick='window.location.href ="view/login.php"'>Entrar</button>
       <button type="button" class="btn btn-outline-primary" title="Clique aqui para Criar uma conta no Site" onclick='window.location.href ="view/cadastro.php"'>Criar uma Conta</button>
     </div>
 
