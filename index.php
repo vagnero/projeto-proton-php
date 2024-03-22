@@ -17,11 +17,13 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="Estilos/style.css">
-  <link rel="stylesheet" href="Estilos/header.css">
-  <link rel="stylesheet" href="Estilos/button.css">
-  <link rel="stylesheet" href="Estilos/footer.css">
-  <link rel="stylesheet" href="Estilos/formsCadastro.css">
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="stylesheet" href="estilos/header.css">
+  <link rel="stylesheet" href="estilos/button.css">
+  <link rel="stylesheet" href="estilos/footer.css">
+  <link rel="stylesheet" href="estilos/formsCadastro.css">
+  <link rel="stylesheet" href="estilos/menuLogin.css">
+  <link rel="stylesheet" href="estilos/perfil-user.css">
 
   <title>Proto-On</title>
 </head>
@@ -42,9 +44,9 @@
             </li>
 
             <?php
-            include('protect.php');
+            //include('protect.php');
             if (!isset($_SESSION['id'])) {
-              echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="cadastro.php" title="Faça seu cadastro no Site">Cadastrar-se</a> </li>';
+              echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="view/cadastro.php" title="Faça seu cadastro no Site">Cadastrar-se</a> </li>';
             }
             ?>
 
@@ -93,6 +95,24 @@
               echo '<h4 class="logout">' . ($_SESSION['nome'] ?? 'Nome não disponível') . '</h4>';
               echo '<a href="logout.php" class="logout">Logout<img src="Imagens/logout.png" alt="Logout"
             class="img-logout"></a>';
+            }else{
+              echo "
+              <div class='avatar-container'>
+                  <div class='avatar' id='avatar' onclick='toggleMenu()'>
+                  
+                      <img src='imagens/cidadao.jpg' alt='Foto do Usuário'>
+                  </div>
+                  <div class='menu' id='menu'>
+                      <ul>
+                          <div class ='perfilMenu'>
+                          <li><a href='./perfil-user.php' style='font-weight: bold;'>Perfil</a></li>
+                          <li><a href='./historico-compra.php' style='font-weight: bold;'>Compras</a></li>
+                          <li><a href='./suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
+                          <li><a href='../../Controller/LogoutUser.php' style='font-weight: bold;'>Sair</a></li>
+                          </div>
+                      </ul>
+                  </div>
+              </div>";
             }
             ?>
           </div>
@@ -137,7 +157,7 @@
 
     <div>
       <button type="button" class="btn btn-outline-primary" title="Clique aqui para fazer Login no Site" onclick='window.location.href ="login.php"'>Entrar</button>
-      <button type="button" class="btn btn-outline-primary" title="Clique aqui para Criar uma conta no Site" onclick='window.location.href ="cadastro.php"'>Criar uma Conta</button>
+      <button type="button" class="btn btn-outline-primary" title="Clique aqui para Criar uma conta no Site" onclick='window.location.href ="view/cadastro.php"'>Criar uma Conta</button>
     </div>
 
     <div class="footer">
@@ -152,3 +172,4 @@
   </body>
 
 </html>
+<script src="scripts/menuLogin.js"></script>

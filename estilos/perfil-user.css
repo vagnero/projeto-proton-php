@@ -1,0 +1,58 @@
+.perfil-user {
+    font-weight: bold;
+    text-align: center;
+    background-color: #f2f2f2; /* Cinza suave */
+    padding: 10px;
+    color: black;
+
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid #c0c0c0; /* Borda para distinguir do fundo branco */
+
+ 
+
+}
+.perfil-user a{
+    background-color: #009500;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 30%;
+    font-weight: bold;
+    text-decoration: none;
+}
+input{
+    background-color: #009500;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 30%;
+    font-weight: bold;
+}
+.foto{
+    background-color: transparent
+}
+.perfil-user img{
+    display: block; /* Adiciona display: block para a imagem */
+    margin-left: auto;
+    margin-right: 50.8%;
+}
+
+.formulario{
+    font-weight: bold;
+    margin-left: 1%;
+    margin-right: auto;
+    
+}
+.formulario label{
+    font-weight: bold;
+    font-size: 18px;
+}
