@@ -1,8 +1,7 @@
 <?php
 
-require_once '../model/Crud.php';
-require_once '../model/Validation.php';
-
+include_once(__DIR__ . '/../../model/Crud.php');
+include_once(__DIR__ . '/../../model/Validation.php');
 class LoginMunicipe
 {
     private $crud;
