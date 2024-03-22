@@ -70,7 +70,18 @@
 </div>
 
 <div style="margin-top: 30px;">
-  <button type="submit" style="margin-inline-end: 10px " class="form" name="Submit">Cadastrar</button>
+  <button type="submit" style="margin-inline-end: 10px " class="form" name="Submit">Editar</button>
+  <button type="submit" style="margin-inline-end: 10px " class="form" name="Submit">Salvar</button>
+
+  <button type="reset" style="margin-inline-end: 10px " class="form" name="Submit">Limpar</button>
+  <button type="button" class="btn btn-outline-dark" title="Clique para voltar ao inicio do Site" onclick='window.location.href ="index.php"'>Voltar</button>
+</div>
+</form>
+<?php
+if(isset($_POST['Submit'])){
+    $controllerMunicipe->registerMunicipe();
+}
+?>
   <button type="button" class="btn btn-outline-dark" title="Clique para voltar ao inicio do Site" onclick='window.location.href ="index.php"'>Voltar</button>
 </div>
 </form>
