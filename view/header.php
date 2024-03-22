@@ -28,6 +28,8 @@ session_start();
   <link rel="stylesheet" href="../estilos/button.css">
   <link rel="stylesheet" href="../estilos/footer.css">
   <link rel="stylesheet" href="../estilos/formsCadastro.css">
+  <link rel="stylesheet" href="../estilos/perfil-user.css">
+  <link rel="stylesheet" href="../estilos/menuLogin.css">
 
   <title>Proto-On</title>
 </head>
@@ -36,7 +38,7 @@ session_start();
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #016974;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php" title="Clique no Logo para ir ao inicio do Site"><img src="../imagens/LogoProto-On.png" alt="Proto-On" style="width: 200px; height: 50px"></a>
+        <a class="navbar-brand" href="../index.php" title="Clique no Logo para ir ao inicio do Site"><img src="../imagens/LogoProto-On.png" alt="Proto-On" style="width: 200px; height: 50px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -45,7 +47,7 @@ session_start();
             <?php
 
             if (!isset($_SESSION['id'])) {
-              echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="index.php" title="Volte ao menu principal">Home</a> </li>';
+              echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="../index.php" title="Volte ao menu principal">Home</a> </li>';
             }
             ?>
 
@@ -79,7 +81,7 @@ session_start();
 
             <li class="nav-item">
               <button id="leitorBtn" onclick="iniciarLeitor()">
-                <img src="Imagens/altoFalante.png" alt="Leitor de Voz">
+                <img src="../imagens/altoFalante.png" alt="Leitor de Voz">
               </button>
             </li>
           </ul>
@@ -95,11 +97,32 @@ session_start();
           </div>
 
           <div>
+            
+          </div>
+          <div>
             <?php
             if (isset($_SESSION['id'])) {
               echo '<h4 class="logout">' . ($_SESSION['nome'] ?? 'Nome não disponível') . '</h4>';
               echo '<a href="logout.php" class="logout">Logout<img src="Imagens/logout.png" alt="Logout"
             class="img-logout"></a>';
+            }else{
+              echo "
+              <div class='avatar-container'>
+                  <div class='avatar' id='avatar' onclick='toggleMenu()'>
+                  
+                      <img src='../imagens/cidadao.jpg' alt='Foto do Usuário'>
+                  </div>
+                  <div class='menu' id='menu'>
+                      <ul>
+                          <div class ='perfilMenu'>
+                          <li><a href='./perfil-user.php' style='font-weight: bold;'>Perfil</a></li>
+                          <li><a href='./suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
+                          <li><a href='../../Controller/LogoutUser.php' style='font-weight: bold;'>Sair</a></li>
+                          </div>
+                      </ul>
+                  </div>
+              </div>";
+              echo "<div class = 'espacamento'> </div>";
             }
             ?>
           </div>
@@ -109,3 +132,4 @@ session_start();
       </div>
     </nav>
   </header>
+  <script src="../scripts/menuLogin.js"></script>
