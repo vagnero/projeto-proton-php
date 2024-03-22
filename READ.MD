@@ -9,7 +9,7 @@ Coisas que precisamos fazer:
     Precisamos fazer a classe ProtectedMunicipe
     Precisamos terminar o método de update no ControllerMunicipe
     Precisamos fazer o "esqueu-senha" do municipe
-
+    
 
 Coisas que já fizemos:
     Página e funções de Cadastro Municipe

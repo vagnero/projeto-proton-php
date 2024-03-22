@@ -8,7 +8,7 @@
         session_start();
         session_unset();
         session_destroy();
-        header('Location: ../view/login.php');
+        header('Location: ../../view/login.php');
         // echo window.location.href='../view/login.php';</script>";
         exit();
     }
