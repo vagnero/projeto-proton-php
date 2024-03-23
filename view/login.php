@@ -5,8 +5,12 @@ ob_start();
 include('header.php');
 include('../model/DbConfig.php');
 include_once '../controller/municipe/LoginMunicipe.php';
-session_destroy();
+include_once "../controller/ProtectedMunicipe.php";
 $loginMunicipe = new LoginMunicipe();
+$protected = new ProtectedMunicipe();
+if ($protected->estaLogado()){
+    $protected->retornarParaIndex();
+}
 ?>
     <div class="body-form">
         <h1 style="margin-top: 10px; font-size: 30px;">Login</h1>

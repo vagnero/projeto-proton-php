@@ -44,8 +44,14 @@
             </li>
 
             <?php
+            include_once "controller/ProtectedMunicipe.php";
+            $protected = new ProtectedMunicipe();
+            $logado = $protected->estaLogado();
             //include('protect.php');
-            if (!isset($_SESSION['id'])) {
+            
+            echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="../index.php" title="Volte ao menu principal">Home</a> </li>';
+            
+            if (!$logado) {
               echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="view/cadastro.php" title="Faça seu cadastro no Site">Cadastrar-se</a> </li>';
             }
             ?>
@@ -88,22 +94,10 @@
             </form>
           </div>
 
+          
           <div>
             <?php
-            if (isset($_SESSION['idMunicipe'])) {
-              echo '<h4 class="../controller/municipe/LogoutMunicipe.php">' . ($_SESSION['idMunicipe'] ?? 'Nome não disponível') . '</h4>';
-              echo '<a href="../controller/municipe/LogoutMunicipe.php" class="logout">Logout<img src="Imagens/logout.png" alt="Logout"
-            class="img-logout"></a>';
-            }
-            ?>
-          </div>
-          <div>
-            <?php
-            if (isset($_SESSION['id'])) {
-              echo '<h4 class="logout">' . ($_SESSION['nome'] ?? 'Nome não disponível') . '</h4>';
-              echo '<a href="logout.php" class="logout">Logout<img src="Imagens/logout.png" alt="Logout"
-            class="img-logout"></a>';
-            } else {
+            if ($logado) {
               echo "
               <div class='avatar-container'>
                   <div class='avatar' id='avatar'>
@@ -162,12 +156,18 @@
     </h1>
 
     <div id="mensagemAcessibilidade"></div>
-
+    <?php
+    if(!$logado){
+    ?>
     <div>
       <button type="button" class="btn btn-outline-primary" title="Clique aqui para fazer Login no Site" onclick='window.location.href ="view/login.php"'>Entrar</button>
       <button type="button" class="btn btn-outline-primary" title="Clique aqui para Criar uma conta no Site" onclick='window.location.href ="view/cadastro.php"'>Criar uma Conta</button>
     </div>
-
+      <?php
+    }else{
+      echo '<h2 class="name">' . ($_SESSION['nome'] ?? 'Nome não disponível') . '</h4>';
+    }
+      ?>
     <div class="footer">
       <footer>
         <h6 style="color: white; font-family: 'Arial', sans-serif; font-size: 14px; font-weight: bold;">Powered by Proto-on company inc ©</h6>

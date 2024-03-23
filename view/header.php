@@ -47,18 +47,17 @@ session_start();
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
               <?php
-
-              if (!isset($_SESSION['id'])) {
-                echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="../index.php" title="Volte ao menu principal">Home</a> </li>';
-              }
-              ?>
-
-              <?php
-
-              if (!isset($_SESSION['id'])) {
+              include_once "../controller/ProtectedMunicipe.php";
+              $protected = new ProtectedMunicipe();
+              $logado = $protected->estaLogado();
+              
+              echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="../index.php" title="Volte ao menu principal">Home</a> </li>';
+              
+              if (!$logado) {
                 echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="cadastro.php" title="Faça seu cadastro no Site">Cadastrar-se</a> </li>';
               }
               ?>
+
 
 
               <li class="nav-item dropdown">
@@ -104,28 +103,24 @@ session_start();
             
             <div>
               <?php
-              if (isset($_SESSION['id'])) {
-                echo '<h4 class="logout">' . ($_SESSION['nome'] ?? 'Nome não disponível') . '</h4>';
-                echo '<a href="logout.php" class="logout">Logout<img src="Imagens/logout.png" alt="Logout"
-            class="img-logout"></a>';
-              } else {
+              if ($logado) {
+               
                 echo "
-              <div class='avatar-container'>
-                  <div class='avatar' id='avatar'>
-                  
-                      <img class='cidadao' id='cidadao' src='../imagens/cidadao.jpg' alt='Foto do Usuário'>
-                  </div>
-                  <div class='menu' id='menu'>
-                      <ul>
-                          <div class ='perfilMenu'>
-                          <li><a href='updateMunicipe.php' style='font-weight: bold;'>Perfil</a></li>
-                          <li><a href='../suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
-                          <li><a href='../controller/LogoutMunicipe.php' style='font-weight: bold;'>Sair</a></li>
-                          </div>
-                      </ul>
-                  </div>
-              </div>";
-                echo "<div class = 'espacamento'> </div>";
+                <div class='avatar-container'>
+                    <div class='avatar' id='avatar'>
+                    
+                        <img class='cidadao' id='cidadao' src='../imagens/cidadao.jpg' alt='Foto do Usuário'>
+                    </div>
+                    <div class='menu' id='menu'>
+                        <ul>
+                            <div class ='perfilMenu'>
+                            <li><a href='updateMunicipe.php' style='font-weight: bold;'>Perfil</a></li>
+                            <li><a href='../suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
+                            <li><a href='../controller/municipe/LogoutMunicipe.php' style='font-weight: bold;'>Sair</a></li>
+                            </div>
+                        </ul>
+                    </div>
+                </div>";
               }
               ?>
             </div>

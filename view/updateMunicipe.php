@@ -3,7 +3,12 @@ ob_start(); // inicia o buffer de saída
 include('header.php');
 include('../controller/municipe/ControllerMunicipe.php');
 include('../controller/endereco/ControllerEndereco.php');
-
+include_once "../controller/ProtectedMunicipe.php";
+$protected = new ProtectedMunicipe();
+//TODO: Está bugando essa parte, dando erro no banco de dados, dps temos que arrumar. 
+if (!$protected->estaLogado()){
+  $protected->retornarParaIndex();
+}
 $controllerMunicipe = new ControllerMunicipe();
 $controllerEndereco = new ControllerEndereco();
 $user = $controllerMunicipe->UpdateMunicipeFormData($controllerMunicipe);

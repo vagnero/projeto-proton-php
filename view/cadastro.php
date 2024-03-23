@@ -6,7 +6,14 @@
 
 <?php
     include_once '../controller/municipe/ControllerMunicipe.php';
+    include_once "../controller/ProtectedMunicipe.php";
+    $protected = new ProtectedMunicipe();
     $controllerMunicipe = new ControllerMunicipe();
+
+    if ($protected->estaLogado()){
+      $protected->retornarParaIndex();
+  }
+
 ?>
 <div class="body-form">
     <h1 style="margin-top: 10px; font-size: 30px;">Cadastro de Usuário</h1>
