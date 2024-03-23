@@ -26,7 +26,7 @@ if ($protected->estaLogado()){
                         <p style="margin-right: 4vw; margin-top: 1vh"><a href="cadastro.php">Cadastrar-se</a></p>
                     </td>
                     <td>
-                        <p style="margin-left: 4vw; margin-top: 1vh"><a href="esqueceu_senha.php">Esqueceu a Senha?</a>
+                        <p style="margin-left: 4vw; margin-top: 1vh"><a href="recuperar_senha.php">Esqueceu a Senha?</a>
                         </p>
                     </td>
                 </tr>
