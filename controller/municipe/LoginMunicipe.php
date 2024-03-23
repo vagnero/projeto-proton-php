@@ -56,9 +56,10 @@ class LoginMunicipe
             }
             var_dump($result); //PARA TESTES
             echo "<script>alert('Logado')</script>";
-            header('Location: ../view/updateMunicipe.php'); 
+            header('Location: ../index.php'); 
         } else {
             echo "<script>alert('Senha ou/e Email errado(s)')</script>";
+            
         }
     }
 }
