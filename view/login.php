@@ -1,9 +1,11 @@
+
 <?php
 
 ob_start();
 include('header.php');
 include('../model/DbConfig.php');
 include_once '../controller/municipe/LoginMunicipe.php';
+session_destroy();
 $loginMunicipe = new LoginMunicipe();
 ?>
     <div class="body-form">

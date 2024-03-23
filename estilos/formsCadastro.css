@@ -14,7 +14,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(10, 134, 103, 0.141);
+    box-shadow: 0 4px 8px rgba(0, 249, 187, 0.141);
     text-align: center;
     font-family: Arial, sans-serif;
     height: auto;
@@ -27,10 +27,20 @@
 }
 
 /* Estilo para os campos do formulário */
-.formsCadastro label, .formsCadastro input{
+.formsCadastro label,
+.formsCadastro input {
     width: 90%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #0000004a;
     border-radius: 5px;
+    color:black; /* Faltou fechar o ponto e vírgula aqui */
+
+    /* Cor de fundo cinza claro para campos de formulário desativados */
+    background-color: #f2f2f2;
+}
+
+/* Estilo para os campos de formulário que estão desativados */
+.formsCadastro input[readonly] {
+    background-color: hwb(0 52% 48% / 0.427); /* Cor de fundo cinza claro */
 }

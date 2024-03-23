@@ -88,14 +88,22 @@
             </form>
           </div>
 
-
+          <div>
+            <?php
+            if (isset($_SESSION['idMunicipe'])) {
+              echo '<h4 class="../controller/municipe/LogoutMunicipe.php">' . ($_SESSION['idMunicipe'] ?? 'Nome não disponível') . '</h4>';
+              echo '<a href="../controller/municipe/LogoutMunicipe.php" class="logout">Logout<img src="Imagens/logout.png" alt="Logout"
+            class="img-logout"></a>';
+            }
+            ?>
+          </div>
           <div>
             <?php
             if (isset($_SESSION['id'])) {
               echo '<h4 class="logout">' . ($_SESSION['nome'] ?? 'Nome não disponível') . '</h4>';
               echo '<a href="logout.php" class="logout">Logout<img src="Imagens/logout.png" alt="Logout"
             class="img-logout"></a>';
-            }else{
+            } else {
               echo "
               <div class='avatar-container'>
                   <div class='avatar' id='avatar'>

@@ -1,7 +1,10 @@
+<link rel="stylesheet" href="../estilos/forms.css">
 <?php
 
 include_once(__DIR__ . '/../../model/Crud.php');
 include_once(__DIR__ . '/../../model/Validation.php');
+include_once(__DIR__ . '/../../controller/municipe/ControllerMunicipe.php');
+
 class LoginMunicipe
 {
     private $crud;
@@ -20,12 +23,9 @@ class LoginMunicipe
 
         $result = $this->crud->select("SELECT senha FROM municipes WHERE email = '$email'");
 
-        //var_dump($result); TESTE
-        //var_dump($senha); TESTE
-
         if ($result) {
             $senhaArm = $result[0]['senha'];
-            if (password_verify($senha, $senhaArm)) { // senha do banco = igual senha armazenada com hash_Password
+            if (password_verify($senha, $senhaArm)) {
                 return true;
             }
         }
@@ -38,16 +38,28 @@ class LoginMunicipe
             $email = $_POST['email'];
             $senha = $_POST['senha'];
 
-            $loginMunicipe = new LoginMunicipe();
+            $userMunicipe = new ControllerMunicipe();
 
-            if ($loginMunicipe->login($email, $senha)) {                
-                //session_start();
-                //$_SESSION['email'] = $email; USAR NO FUTURO
-                echo "<script>alert('Logado')</script>";
-                header('Location: ../view/redirecionamentoTeste.php'); 
-            } else {
-                echo "<script>alert('Senha ou/e Email errado(s)')</script>";
+            if ($this->login($email, $senha)) {
+                $queryId = "SELECT idMunicipe FROM municipes WHERE email = '$email'";
+                $resultQuery = $this->crud->getData($queryId);
+
+                if (!empty($resultQuery)) {
+                    $idMunicipe = $resultQuery[0]['idMunicipe'];
+                    $result = $userMunicipe->getMunicipeById($idMunicipe);
+                    if (!empty($result)) {
+                        session_start();
+                        $_SESSION['nome'] = $result['nome'];
+                        $_SESSION['idMunicipe'] = $idMunicipe; 
+                    }
+                }
             }
+            var_dump($result); //PARA TESTES
+            echo "<script>alert('Logado')</script>";
+            header('Location: ../view/updateMunicipe.php'); 
+        } else {
+            echo "<script>alert('Senha ou/e Email errado(s)')</script>";
         }
     }
 }
+?>
