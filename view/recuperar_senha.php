@@ -4,7 +4,7 @@
 ob_start();
 include('header.php');
 include('../model/DbConfig.php');
-include_once '../controller/LoginMunicipe.php';
+include_once '../controller/municipe/LoginMunicipe.php';
 
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
@@ -48,6 +48,12 @@ $mail = new PHPMailer(true);
       // Obter a conexão
       $conn = $dbConfig->connection;
 
+      $query_create_table = "CREATE TABLE IF NOT EXISTS recuperar (
+          id INT(11) AUTO_INCREMENT PRIMARY KEY,
+          idMunicipe INT(11) NOT NULL,
+          chave VARCHAR(255) NOT NULL
+      )";
+
       $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
       if (!empty($dados['SendRecupSenha'])) {
 
@@ -67,35 +73,45 @@ $mail = new PHPMailer(true);
           $stmt_insert_recuperar = null;
           $stmt_update_recuperar = null;
           // Verificar se a consulta retornou algum resultado
-            if ($result->num_rows > 0) {
-              $row_usuario = $result->fetch_assoc();
-              $chave = password_hash($row_usuario['id'], PASSWORD_DEFAULT);
+          if ($result->num_rows > 0) {
+            $row_usuario = $result->fetch_assoc();
+            $chave = password_hash($row_usuario['id'], PASSWORD_DEFAULT);
+        
+            // Verificar se já existe um registro na tabela recuperar para este usuário
+            $query_check_recuperar = "SELECT idMunicipe FROM recuperar WHERE idMunicipe = ?";
+            $stmt_check_recuperar = $conn->prepare($query_check_recuperar);
+            $stmt_check_recuperar->bind_param('i', $row_usuario['id']);
+            $stmt_check_recuperar->execute();
+            $result_check_recuperar = $stmt_check_recuperar->get_result();
           
-              // Verificar se já existe um registro na tabela recuperar para este usuário
-              $query_check_recuperar = "SELECT idMunicipe FROM recuperar WHERE idMunicipe = ?";
-              $stmt_check_recuperar = $conn->prepare($query_check_recuperar);
-              $stmt_check_recuperar->bind_param('i', $row_usuario['id']);
-              $stmt_check_recuperar->execute();
-              $result_check_recuperar = $stmt_check_recuperar->get_result();
+            if ($result_check_recuperar->num_rows > 0) {
+                // Se já existe um registro, atualize a chave existente
+                $query_update_recuperar = "UPDATE recuperar SET chave = ? WHERE idMunicipe = ?";
+                $stmt_update_recuperar = $conn->prepare($query_update_recuperar);
+                $stmt_update_recuperar->bind_param('si', $chave, $row_usuario['id']);
+                $update_success = $stmt_update_recuperar->execute();
+
+                if ($update_success && $stmt_update_recuperar->affected_rows > 0) {
+                  $link = "http://localhost/projeto-proton-php/view/atualizar_senha.php?chave=$chave";
+                }
           
-              if ($result_check_recuperar->num_rows > 0) {
-                  // Se já existe um registro, atualize a chave existente
-                  $query_update_recuperar = "UPDATE recuperar SET chave = ? WHERE idMunicipe = ?";
-                  $stmt_update_recuperar = $conn->prepare($query_update_recuperar);
-                  $stmt_update_recuperar->bind_param('si', $chave, $row_usuario['id']);
-                  $stmt_update_recuperar->execute();
-              } else {
-                  // Se não existe um registro, insira um novo
-                  $query_insert_recuperar = "INSERT INTO recuperar (idMunicipe, chave) VALUES (?, ?)";
-                  $stmt_insert_recuperar = $conn->prepare($query_insert_recuperar);
-                  $stmt_insert_recuperar->bind_param('is', $row_usuario['id'], $chave);
-                  $stmt_insert_recuperar->execute();
+            } else {
+                // Se não existe um registro, insira um novo
+                $query_insert_recuperar = "INSERT INTO recuperar (idMunicipe, chave) VALUES (?, ?)";
+                $stmt_insert_recuperar = $conn->prepare($query_insert_recuperar);
+                $stmt_insert_recuperar->bind_param('is', $row_usuario['id'], $chave);
+                $stmt_insert_recuperar->execute();
+
+                if ($insert_success && $stmt_insert_recuperar->affected_rows > 0) {
+                  $link = "http://localhost/projeto-proton-php/view/atualizar_senha.php?chave=$chave";
+                }
               }
           
               // Verificar se a atualização ou inserção foi bem-sucedida
               if ($stmt_update_recuperar->affected_rows > 0 || $stmt_insert_recuperar->affected_rows > 0) {
-                  $link = "http://localhost/projeto-proton-php-local/view/atualizar_senha.php?chave=$chave";
+                  // $link = "http://localhost/projeto-proton-php/view/atualizar_senha.php?chave=$chave";
 
+                  // link para acessar o email: https://mailtrap.io/ user: Proto-On Senha: Proto_On123
                   try {
                       //Server settings
                       $mail->CharSet = 'UTF-8';
