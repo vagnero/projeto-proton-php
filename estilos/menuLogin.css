@@ -14,6 +14,7 @@ body {
 }
 
 
+
 .avatar {
     width: 70px;
     height: 70px;
@@ -37,8 +38,15 @@ body {
     left: 50%; /* Centralizando o menu */
     transform: translateX(-50%); /* Centralizando o menu */
 }
+.menu li {
+    padding: 3px;
+    cursor: pointer;
+}
 .perfilMenu a{
+    display: block; /* Transformar o link em um bloco para ocupar todo o espaço do elemento pai */
     color: #09717d;
+    text-decoration: none; /* Remover o sublinhado padrão */
+    padding: 15px; /* Adicionar um padding interno para espaçamento entre o texto e a borda */
 }
 
 .menu ul {
@@ -47,14 +55,13 @@ body {
     margin: 0;
 }
 
-.menu li {
-    padding: 10px;
-    cursor: pointer;
-}
+
 
 .menu li:hover {
     background-color: #f0f0f0; /* Mudança de cor do item do menu ao passar o mouse */
     font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 15px; /* Adicionando borda arredondada ao menu */
 }
 
 .avatar img {
