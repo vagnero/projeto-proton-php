@@ -17,9 +17,11 @@ if ($protected->estaLogado()){
 
         <form action="" method="post">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control rua" title="Digite aqui o seu email" name="email" size="20">
+            <input type="email" class="form-control rua" title="Digite aqui o seu email" name="email" size="20" 
+            value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>">
             <label for="senha" class="form-label">Senha</label>
-            <input type="password" class="form-control rua" title="Digite aqui a sua senha" name="senha" size="20">
+            <input type="password" class="form-control rua" title="Digite aqui a sua senha" name="senha" size="20"
+            value="<?php if (isset($_POST['senha'])) echo $_POST['senha']; ?>">
             <table>
                 <tr>
                     <td>
