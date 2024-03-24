@@ -19,7 +19,9 @@ $controllerEndereco = new ControllerEndereco();
 $user = $controllerMunicipe->UpdateMunicipeFormData($controllerMunicipe);
 $address = $controllerEndereco->UpdateEnderecoFormData($controllerEndereco); //Tentei deixar um padrão em ingles addrees = endereço, mas temos que conversar sobre isso
 
-
+$dataNasc = $protected->getDataNasc();
+$cpf = $protected->getCpf();
+$email = $protected->getEmail();
 ?>
 
 <div class="body-form">
@@ -69,16 +71,16 @@ $address = $controllerEndereco->UpdateEnderecoFormData($controllerEndereco); //T
 
      
   <label for="cpf" class="form-label">CPF<span style="color:red " class="required-symbol">*</span>
-    <input type="text" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required required title="Digite aqui o seu CPF" name="cpf" placeholder="XXX.XXX.XXX-XX" minlength="11" maxlength="15" name="cpf" id="cpf" size="40" value= "" readonly>
+    <input type="text" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);"  required required title="Digite aqui o seu CPF" name="cpf" minlength="11" maxlength="15" name="cpf" id="cpf" size="40" value='<?php echo $cpf ?>' readonly>
   </label>
 
 
       <label for="email" class="form-label">Email<span style="color:red " class="required-symbol">*</span>
-        <input type="email" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required title="Digite aqui o seu email" minlength="11" name="email" id="email" size="20"  value="" readonly>
+        <input type="email" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required title="Digite aqui o seu email" minlength="11" name="email" id="email" size="20"  value='<?php echo $email ?>' readonly>
       </label>
 
       <label for="dataNascimento" class="form-label">Data de Nascimento<span style="color:red " class="required-symbol">*</span>
-    <input type="date" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required required title="Escolha a data em que nasceu" name="dataNascimento" id="dataNascimento" size="40" value="" readonly>
+    <input type="date" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required required title="Escolha a data em que nasceu" name="dataNascimento" id="dataNascimento" size="40" value='<?php echo $dataNasc ?>' readonly>
   </label>
 
 

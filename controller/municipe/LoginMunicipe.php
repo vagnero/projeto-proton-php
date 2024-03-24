@@ -50,7 +50,11 @@ class LoginMunicipe
                     if (!empty($result)) {
                         session_start();
                         $_SESSION['nome'] = $result['nome'];
+                        $_SESSION['email'] = $result['email'];
+                        $_SESSION['cpf'] = $result['cpf'];
+                        $_SESSION['dataNascimento'] = $result['dataNascimento'];
                         $_SESSION['idMunicipe'] = $idMunicipe; 
+                        $_SESSION['idEndereco'] = $result['idEndereco'];
                     }
                 }
             }
