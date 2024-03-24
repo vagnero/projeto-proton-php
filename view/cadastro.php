@@ -6,7 +6,7 @@
 
 <?php
     include_once '../controller/municipe/ControllerMunicipe.php';
-    include_once "../controller/ProtectedMunicipe.php";
+    include_once "../controller/municipe/ProtectedMunicipe.php";
     $protected = new ProtectedMunicipe();
     $controllerMunicipe = new ControllerMunicipe();
 

@@ -81,6 +81,7 @@ class ControllerEndereco
 
     public function UpdateEnderecoFormData($controllerEndereco) //Data = Dados ok!
     {
+        $endereco = null; //Precisou colocar null pra resolver o erro, pois se não tivesse logado, não havia retorno gerando erro
         if (isset($_SESSION['idMunicipe'])) {
             $id = $_SESSION['idMunicipe'];
             $endereco = $controllerEndereco->getEnderecoById($id);

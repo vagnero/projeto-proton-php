@@ -5,7 +5,7 @@ ob_start();
 include('header.php');
 include('../model/DbConfig.php');
 include_once '../controller/municipe/LoginMunicipe.php';
-include_once "../controller/ProtectedMunicipe.php";
+include_once "../controller/municipe/ProtectedMunicipe.php";
 $loginMunicipe = new LoginMunicipe();
 $protected = new ProtectedMunicipe();
 if ($protected->estaLogado()){

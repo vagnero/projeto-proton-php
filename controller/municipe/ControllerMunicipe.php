@@ -109,7 +109,7 @@ class ControllerMunicipe
 
     public function UpdateMunicipeFormData($controllerMunicipe)
     {
-        
+        $municipe = null; //Precisou colocar null pra resolver o erro, pois se não tivesse logado, não havia retorno gerando erro
         if (isset($_SESSION['idMunicipe'])) {
             $id = $_SESSION['idMunicipe'];
             $municipe = $controllerMunicipe->getMunicipeById($id);
