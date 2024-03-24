@@ -30,19 +30,32 @@
     <input type="text" class="formsCadastro" required required title="Digite aqui o seu celular" name="celular" placeholder="(XX) XXXXX-XXXX" minlength="9" maxlength="15" name="celular" id="celular" size="40" value="<?php if (isset($_POST['celular'])) echo $_POST['celular']; ?>">
   </label>
 
+  <label for="cpf" class="form-label">CPF<span style="color:red " class="required-symbol">*</span>
+    <input type="text" class="formsCadastro" required required title="Digite aqui o seu CPF" name="cpf" placeholder="XXX.XXX.XXX-XX" minlength="11" maxlength="15" name="cpf" id="cpf" size="40" value="<?php if (isset($_POST['cpf'])) echo $_POST['cpf']; ?>">
+  </label>
+
+  <label for="dataNascimento" class="form-label">Data de Nascimento<span style="color:red " class="required-symbol">*</span>
+    <input type="date" class="formsCadastro" required required title="Escolha a data em que nasceu" name="dataNascimento" id="dataNascimento" size="40" value="<?php if (isset($_POST['dataNascimento'])) echo $_POST['dataNascimento']; ?>">
+  </label>
+
 
   <label for="cep" class="form-label">Cep<span style="color:red " class="required-symbol">*</span>
     <input class="formsCadastro" required minlength="9" name="cep" type="text" id="cep" value="<?php if (isset($_POST['cep'])) echo $_POST['cep']; ?>" size="10" maxlength="9">
   </label>
 
-  <label for="estado" class="form-label">Estado
+ 
+</div>
+
+
+<div style="margin-top: 10px;">
+
+<label for="estado" class="form-label">Estado
     <input class="formsCadastro" name="estado" type="text" maxlength="2" id="uf" size="2" value="<?php if (isset($_POST['estado'])) echo $_POST['estado']; ?>">
   </label>
-</div>
-<div style="margin-top: 10px;">
   <label for="cidade" class="form-label">Cidade
     <input class="formsCadastro" name="cidade" type="text" minlength="4" id="cidade" size="40" value="<?php if (isset($_POST['cidade'])) echo $_POST['cidade']; ?>">
   </label>
+
 
   <label for="bairro" class="form-label">Bairro
     <input class="formsCadastro" name="bairro" type="text" minlength="4" id="bairro" size="40" value="<?php if (isset($_POST['bairro'])) echo $_POST['bairro']; ?>">

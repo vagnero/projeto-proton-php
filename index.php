@@ -49,7 +49,6 @@
             $logado = $protected->estaLogado();
             //include('protect.php');
             
-            echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="../index.php" title="Volte ao menu principal">Home</a> </li>';
             
             if (!$logado) {
               echo '<li class="nav-item"><a class="nav-link" aria-current="cadastro.php" href="view/cadastro.php" title="Faça seu cadastro no Site">Cadastrar-se</a> </li>';

@@ -16,10 +16,12 @@ CREATE TABLE `enderecos` (
 CREATE TABLE `municipes` (
   `idMunicipe` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `celular` varchar(15) NOT NULL,
+  `cpf` varchar(15) NOT NULL UNIQUE,
+  `celular` varchar(15) NOT NULL UNIQUE,
+  `dataNascimento` DATE,
   `dataInscricao` datetime NOT NULL,
   `idEndereco` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL UNIQUE,
   `senha` varchar(255) NOT NULL,
   PRIMARY KEY (`idMunicipe`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
