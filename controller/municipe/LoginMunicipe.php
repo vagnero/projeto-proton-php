@@ -50,17 +50,11 @@ class LoginMunicipe
                     if (!empty($result)) {
                         session_start();
                         $_SESSION['nome'] = $result['nome'];
-<<<<<<< HEAD
-                        $_SESSION['idMunicipe'] = $idMunicipe;
-                        echo "<script>alert('Logado')</script>";
-                        header('Location: ../../view/redirecionamentoTeste.php');
-=======
                         $_SESSION['email'] = $result['email'];
                         $_SESSION['cpf'] = $result['cpf'];
                         $_SESSION['dataNascimento'] = $result['dataNascimento'];
                         $_SESSION['idMunicipe'] = $idMunicipe; 
                         $_SESSION['idEndereco'] = $result['idEndereco'];
->>>>>>> 1c3b0905697075779624558b483a35ffc4d84502
                     }
                 }
             }
