@@ -67,9 +67,20 @@ $address = $controllerEndereco->UpdateEnderecoFormData($controllerEndereco); //T
         <input class="formsCadastro" name="complemento" type="text" id="complemento" size="60" value="<?php echo isset($address['complemento']) ? $address['complemento'] : ''; ?>">
       </label>
 
+     
+  <label for="cpf" class="form-label">CPF<span style="color:red " class="required-symbol">*</span>
+    <input type="text" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required required title="Digite aqui o seu CPF" name="cpf" placeholder="XXX.XXX.XXX-XX" minlength="11" maxlength="15" name="cpf" id="cpf" size="40" value= "" readonly>
+  </label>
+
+
       <label for="email" class="form-label">Email<span style="color:red " class="required-symbol">*</span>
         <input type="email" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required title="Digite aqui o seu email" minlength="11" name="email" id="email" size="20"  value="" readonly>
       </label>
+
+      <label for="dataNascimento" class="form-label">Data de Nascimento<span style="color:red " class="required-symbol">*</span>
+    <input type="date" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required required title="Escolha a data em que nasceu" name="dataNascimento" id="dataNascimento" size="40" value="" readonly>
+  </label>
+
 
       <label for="senha" class="form-label">Senha<span style="color:red " class="required-symbol">*</span>
         <input type="password" class="formsCadastro" style="background-color: hwb(0 52% 48% / 0.427);" required minlength="6" title="Digite aqui a sua senha" name="senha" id="senha" size="20" value="" readonly>
@@ -77,7 +88,7 @@ $address = $controllerEndereco->UpdateEnderecoFormData($controllerEndereco); //T
     </div>
 
     <div style="margin-top: 30px;">
-      <button type="submit" style="margin-inline-end: 10px " class="form" name="Submit">Cadastrar</button>
+      <button type="submit" style="margin-inline-end: 10px " class="form" name="Submit">Editar</button>
       <button type="button" class="btn btn-outline-dark" title="Clique para voltar ao inicio do Site" onclick='window.location.href ="../index.php"'>Voltar</button>
     </div>
   </form>

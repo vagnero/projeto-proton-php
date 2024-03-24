@@ -53,7 +53,8 @@ class ControllerMunicipe
             $nome = $this->crud->escape_string($_POST['nome']);
             $celular = $this->crud->escape_string($_POST['celular']);
             $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
-
+            $dataNasc = $this->crud->escape_string($_POST['dataNascimento']);
+            $cpf = $this->crud->escape_string($_POST['cpf']);
             // Verifique se o e-mail já existe na tabela
             $check_query = "SELECT COUNT(*) FROM municipes WHERE email = '$email'";
             $result = $this->crud->connection->query($check_query);
@@ -67,7 +68,7 @@ class ControllerMunicipe
                 } else {
                     $idEndereco = $this->registerEndereco();
                     if ($idEndereco > 0) {
-                        $sql_municipe = "INSERT INTO municipes (nome, celular, email, senha, idEndereco, dataInscricao) VALUES ('$nome', '$celular', '$email', '$senha', '$idEndereco', DATE_ADD(NOW(), INTERVAL 2 HOUR))";
+                        $sql_municipe = "INSERT INTO municipes (nome, cpf, celular, dataNascimento, dataInscricao, idEndereco, email, senha) VALUES ('$nome', '$cpf', '$celular', '$dataNasc', DATE_ADD(NOW(), INTERVAL 2 HOUR), '$idEndereco', '$email', '$senha')";
                         if ($this->crud->execute($sql_municipe)) {
                             echo "<script>alert('Usuário cadastrado com sucesso!'); window.location.href='login.php';</script>";
                         } else {
