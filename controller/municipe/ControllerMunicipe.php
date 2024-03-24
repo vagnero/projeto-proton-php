@@ -21,6 +21,9 @@ class ControllerMunicipe
 
     public function registerEndereco()
     {
+
+        
+
         if (isset($_POST['Submit'])) {
             $cep = $this->crud->connection->escape_string($_POST['cep']);
             $estado = $this->crud->escape_string($_POST['estado']);
@@ -47,7 +50,8 @@ class ControllerMunicipe
     }
 
     public function registerMunicipe()
-    { //Função para adicionar municipes no banco de dados
+    { //Função para adicionar municipes no banco de dados        
+
         if (isset($_POST['email'])) { //se entrar o submit, a função excecuta
             $email = $this->crud->escape_string($_POST['email']);
             $nome = $this->crud->escape_string($_POST['nome']);

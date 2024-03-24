@@ -11,6 +11,27 @@ $protected = new ProtectedMunicipe();
 if ($protected->estaLogado()){
     $protected->retornarParaIndex();
 }
+
+$dbConfig = new DbConfig();
+
+// Obter a conexão
+$conn = $dbConfig->connection;
+
+$query_create_table = "CREATE TABLE IF NOT EXISTS municipes (
+    idMunicipe int(11) NOT NULL AUTO_INCREMENT,
+    nome varchar(255) CHARACTER SET utf8 NOT NULL,
+    cpf varchar(15) NOT NULL UNIQUE,
+    celular varchar(15) NOT NULL UNIQUE,
+    dataNascimento DATE,
+    dataInscricao datetime NOT NULL,
+    idEndereco int(11) NOT NULL,
+    email varchar(255) NOT NULL UNIQUE,
+    senha varchar(255) NOT NULL,
+    PRIMARY KEY (idMunicipe)
+    ) ENGINE=MyISAM DEFAULT CHARSET=latin1";
+
+$conn->query($query_create_table);
+
 ?>
     <div class="body-form">
         <h1 style="margin-top: 10px; font-size: 30px;">Login</h1>
@@ -34,7 +55,7 @@ if ($protected->estaLogado()){
                 </tr>
             </table>
             <button type="submit" class="form" name="submit">Entrar</button>
-            <button type="button" class="btn btn-outline-dark voltar" onclick='window.location.href ="index.php"'>Voltar</button>
+            <button type="button" class="btn btn-outline-dark voltar" onclick='window.location.href ="../index.php"'>Voltar</button>
         </form>
     </div>
     <div class="footer">
