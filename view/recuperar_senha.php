@@ -54,6 +54,8 @@ $mail = new PHPMailer(true);
           chave VARCHAR(255) NOT NULL
       )";
 
+      $conn->query($query_create_table);
+
       $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
       if (!empty($dados['SendRecupSenha'])) {
 
@@ -92,6 +94,7 @@ $mail = new PHPMailer(true);
                 $update_success = $stmt_update_recuperar->execute();
 
                 if ($update_success && $stmt_update_recuperar->affected_rows > 0) {
+                  // $link = "http://protoonphp.000.pe/view/atualizar_senha.php?chave=$chave";
                   $link = "http://localhost/projeto-proton-php/view/atualizar_senha.php?chave=$chave";
                 }
           
@@ -103,6 +106,7 @@ $mail = new PHPMailer(true);
                 $insert_success = $stmt_insert_recuperar->execute();
 
                 if ($insert_success && $stmt_insert_recuperar->affected_rows > 0) {
+                  // $link = "http://protoonphp.000.pe/view/atualizar_senha.php?chave=$chave";
                   $link = "http://localhost/projeto-proton-php/view/atualizar_senha.php?chave=$chave";
                 }
               }
@@ -129,7 +133,7 @@ $mail = new PHPMailer(true);
                       $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable implicit TLS encryption
 
                       //Recipients
-                      $mail->setFrom('wesley@email.com', 'atendimento');  
+                      $mail->setFrom('wesley@email.com', 'Proto-On');  
                       $mail->addAddress($row_usuario['email'], $row_usuario['nome']);
 
                       //Content

@@ -31,7 +31,7 @@ session_start();
   <link rel="stylesheet" href="../estilos/formsCadastro.css">
   <link rel="stylesheet" href="../estilos/perfil-user.css">
   <link rel="stylesheet" href="../estilos/menuLogin.css">
-  
+  <link rel="stylesheet" href="estilos/perfil-user.css">  
 
   <title>Proto-On</title>
   </head>
@@ -58,27 +58,23 @@ session_start();
               }
               ?>
 
-
-
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" title="Clique para acessar os serviços" role="button" data-bs-toggle="dropdown" aria-expanded="false">Serviços</a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="reclamar.php" title="Abra uma reclamação">Abrir reclamação</a></li>
+                  <li><a class="dropdown-item" href="abrir_reclamacao.php" title="Abra uma reclamação">Abrir reclamação</a></li>
                   <li><a class="dropdown-item" href="consultar.php" title="Consulte seus protocolos">Consultar protocolos</a></li>
                 </ul>
               </li>
-
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" title="Clique Mais Opções" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mais</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="contato.php" title="Saiba como nos contatar">Contato</a>
                   </li>
-                  <li><a class="dropdown-item" href="sobrenos.php" title="Saiba mais sobre nós">Sobre Nós</a>
+                  <li><a class="dropdown-item" href="sobre_nos.php" title="Saiba mais sobre nós">Sobre Nós</a>
                   </li>
                 </ul>
               </li>
-
 
               <li class="nav-item">
                 <button id="leitorBtn" onclick="iniciarLeitor()">
@@ -86,7 +82,6 @@ session_start();
                 </button>
               </li>
             </ul>
-
 
             <div style="margin-top: 5px;">
               <form class="d-flex" role="search" style="margin-top: 10px;">
@@ -124,7 +119,6 @@ session_start();
               }
               ?>
             </div>
-
 
           </div>
         </div>
