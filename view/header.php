@@ -115,7 +115,7 @@ session_start();
                         <ul>
                             <div class ='perfilMenu'>
                             <li><a href='updateMunicipe.php' style='font-weight: bold;'>Perfil</a></li>
-                            <li><a href='../suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
+                            <li><a href='../view/suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
                             <li><a href='../controller/municipe/LogoutMunicipe.php' style='font-weight: bold;'>Sair</a></li>
                             </div>
                         </ul>

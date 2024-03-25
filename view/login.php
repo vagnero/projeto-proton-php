@@ -17,7 +17,7 @@ $dbConfig = new DbConfig();
 // Obter a conexão
 $conn = $dbConfig->connection;
 
-$query_create_table = "CREATE TABLE IF NOT EXISTS municipes (
+$query_create_table_municipes = "CREATE TABLE IF NOT EXISTS municipes (
     idMunicipe int(11) NOT NULL AUTO_INCREMENT,
     nome varchar(255) CHARACTER SET utf8 NOT NULL,
     cpf varchar(15) NOT NULL UNIQUE,
@@ -28,9 +28,23 @@ $query_create_table = "CREATE TABLE IF NOT EXISTS municipes (
     email varchar(255) NOT NULL UNIQUE,
     senha varchar(255) NOT NULL,
     PRIMARY KEY (idMunicipe)
-    ) ENGINE=MyISAM DEFAULT CHARSET=latin1";
+) ENGINE=MyISAM DEFAULT CHARSET=latin1";
 
-$conn->query($query_create_table);
+$query_create_table_enderecos = "CREATE TABLE IF NOT EXISTS enderecos (
+    idEndereco int(11) NOT NULL AUTO_INCREMENT,
+    cep varchar(10) DEFAULT NULL,
+    estado varchar(2) CHARACTER SET utf8 DEFAULT NULL,
+    cidade varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+    bairro varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+    rua varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+    numero varchar(10) DEFAULT NULL,
+    complemento varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+    PRIMARY KEY (idEndereco)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1";
+
+$conn->query($query_create_table_municipes);
+$conn->query($query_create_table_enderecos);
+
 
 ?>
     <div class="body-form">
