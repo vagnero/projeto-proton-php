@@ -56,8 +56,6 @@ class LoginMunicipe
                         $_SESSION['dataNascimento'] = $result['dataNascimento'];
                         $_SESSION['idMunicipe'] = $idMunicipe;
                         $_SESSION['idEndereco'] = $result['idEndereco'];
-
-                        header('Location: ../view/redirecionamentoTeste.php');
                     }
                 }
                 header('Location: ../index.php');

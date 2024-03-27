@@ -107,10 +107,6 @@
                       <ul>
                           <div class ='perfilMenu'>
                           <li><a href='view/updateMunicipe.php' style='font-weight: bold;'>Perfil</a></li>
-<<<<<<< HEAD
-=======
-                          <li><a href='/view/historico-compra.php' style='font-weight: bold;'>Compras</a></li>
->>>>>>> 1806fcb506e885ab23359b30888010d2b9f5c341
                           <li><a href='/view/suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
                           <li><a href='controller/municipe/LogoutMunicipe.php' style='font-weight: bold;'>Sair</a></li>
                           </div>

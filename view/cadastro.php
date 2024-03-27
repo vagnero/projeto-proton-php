@@ -21,7 +21,6 @@
   <form action=""  method="post">
     <div>
       <label for="nome" class="form-label">Nome<span style="color:red " class="required-symbol">*</span>
-<<<<<<< HEAD
         <input type="text" class="formsCadastro" required required title="Digite aqui o seu nome" minlength="3" id="nome" name="nome" size="40">
       </label>
 
@@ -80,66 +79,6 @@
       </label>
     </div>
 
-=======
-        <input type="text" class="formsCadastro" value="João" required required title="Digite aqui o seu nome" minlength="3" id="nome" name="nome" size="40" value="<?php if (isset($_POST['nome'])) echo $_POST['nome']; ?>">
-      </label>
-
-      <label for="celular" class="form-label">Celular<span style="color:red " class="required-symbol">*</span>
-        <input type="text" class="formsCadastro" value="(11)99876-5432" required required title="Digite aqui o seu celular" name="celular" placeholder="(XX) XXXXX-XXXX" minlength="9" maxlength="15" name="celular" id="celular" size="40" value="<?php if (isset($_POST['celular'])) echo $_POST['celular']; ?>">
-      </label>
-
-      <label for="cpf" class="form-label">CPF<span style="color:red " class="required-symbol">*</span>
-        <input type="text" class="formsCadastro" maxlength="11" required required title="Digite aqui o seu CPF" name="cpf" placeholder="XXX.XXX.XXX-XX" minlength="11" maxlength="15" name="cpf" id="cpf" size="40" value="<?php if (isset($_POST['cpf'])) echo $_POST['cpf']; ?>">
-      </label>
-
-      <label for="dataNascimento" class="form-label">Data de Nascimento<span style="color:red " class="required-symbol">*</span>
-        <input type="date" class="formsCadastro" value="<?php echo date('Y-m-d'); ?>" required required title="Escolha a data em que nasceu" name="dataNascimento" id="dataNascimento" size="40" value="<?php if (isset($_POST['dataNascimento'])) echo $_POST['dataNascimento']; ?>">
-      </label>
-
-      <label for="cep" class="form-label">Cep<span style="color:red " class="required-symbol">*</span>
-        <input class="formsCadastro" required minlength="9" name="cep" value="08500100" type="text" id="cep" value="<?php if (isset($_POST['cep'])) echo $_POST['cep']; ?>" size="10" maxlength="9">
-      </label>
-    
-    </div>
-
-    <div style="margin-top: 10px;">
-
-      <label for="estado" class="form-label">Estado
-        <input class="formsCadastro" name="estado" type="text" maxlength="2" id="uf" size="2" value="<?php if (isset($_POST['estado'])) echo $_POST['estado']; ?>">
-      </label>
-
-      <label for="cidade" class="form-label">Cidade
-        <input class="formsCadastro" name="cidade" type="text" minlength="4" id="cidade" size="40" value="<?php if (isset($_POST['cidade'])) echo $_POST['cidade']; ?>">
-      </label>
-
-      <label for="bairro" class="form-label">Bairro
-        <input class="formsCadastro" name="bairro" type="text" minlength="4" id="bairro" size="40" value="<?php if (isset($_POST['bairro'])) echo $_POST['bairro']; ?>">
-      </label>
-
-      <label for="rua" class="form-label">Rua
-        <input class="formsCadastro" name="rua" type="text" minlength="4" id="rua" size="60" value="<?php if (isset($_POST['rua'])) echo $_POST['rua']; ?>">
-      </label>
-
-      <label for="numero" class="form-label">Número<span style="color:red " class="required-symbol">*</span>
-        <input class="formsCadastro" required maxlength="5" value="1" name="numero" type="number" id="numero" size="5" min="1" value="<?php if (isset($_POST['numero'])) echo $_POST['numero']; ?>">
-      </label>
-    </div>
-
-    <div style="margin-top: 10px;">
-      <label for="complemento" class="form-label">Complemento
-        <input class="formsCadastro" name="complemento" value="casa 1" type="text" id="complemento" size="60" value="<?php if (isset($_POST['complemento'])) echo $_POST['complemento']; ?>">
-      </label>
-
-      <label for="email" class="form-label">Email<span style="color:red " class="required-symbol">*</span>
-        <input type="email" class="formsCadastro" value="@email.com" required title="Digite aqui o seu email" minlength="11" name="email" id="email" size="20" value="<?php if (isset($_POST['email'])) echo $_POST['email']; ?>">
-      </label>
-
-      <label for="senha" class="form-label">Senha<span style="color:red " class="required-symbol">*</span>
-        <input type="password" class="formsCadastro" required minlength="6" title="Digite aqui a sua senha" name="senha" id="senha" size="20" value="<?php if (isset($_POST['senha'])) echo $_POST['senha']; ?>">
-      </label>
-    </div>
-
->>>>>>> 1806fcb506e885ab23359b30888010d2b9f5c341
     <div style="margin-top: 30px;">
       <button type="submit" style="margin-inline-end: 10px" class="form" name="Submit">Cadastrar</button>
       <button type="button" class="btn btn-outline-dark" title="Clique para voltar ao inicio do Site" onclick='window.location.href ="../index.php"'>Voltar</button>
