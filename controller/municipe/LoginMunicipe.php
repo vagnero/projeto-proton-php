@@ -56,6 +56,7 @@ class LoginMunicipe
                         $_SESSION['dataNascimento'] = $result['dataNascimento'];
                         $_SESSION['idMunicipe'] = $idMunicipe;
                         $_SESSION['idEndereco'] = $result['idEndereco'];
+                        echo "<script>alert('Login realizado com sucesso!');</script>";
                     }
                 }
                 header('Location: ../index.php');

@@ -125,3 +125,4 @@ session_start();
       </nav>
     </header>
     <script src="../scripts/menuLogin.js"></script>
+    <script src="../scripts/leitor.js"></script> 
