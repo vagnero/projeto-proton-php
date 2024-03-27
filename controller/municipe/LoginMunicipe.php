@@ -49,23 +49,22 @@ class LoginMunicipe
                     $idMunicipe = $resultQuery[0]['idMunicipe'];
                     $result = $userMunicipe->getMunicipeById($idMunicipe);
                     if (!empty($result)) {
-                        session_start();
+                        // session_start();
                         $_SESSION['nome'] = $result['nome'];
                         $_SESSION['email'] = $result['email'];
                         $_SESSION['cpf'] = $result['cpf'];
                         $_SESSION['dataNascimento'] = $result['dataNascimento'];
-                        $_SESSION['idMunicipe'] = $idMunicipe; 
+                        $_SESSION['idMunicipe'] = $idMunicipe;
                         $_SESSION['idEndereco'] = $result['idEndereco'];
                     }
                 }
+                header('Location: ../index.php');
+            } else {
+                echo "<script>alert('Email e/ou Senha incorretos'); window.location.href='../../view/login.php';</script>";
+                // var_dump($result); //PARA TESTES 
             }
-            // var_dump($result); //PARA TESTES
-            // echo "<script>alert('Logado')</script>";
-            // header('Location: ../index.php'); 
-        } else {
-            echo "<script>alert('Senha ou/e Email errado(s)')</script>";
-            
         }
     }
 }
+
 ?>

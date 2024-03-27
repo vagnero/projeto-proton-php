@@ -32,7 +32,7 @@
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #016974;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php" title="Clique no Logo para ir ao inicio do Site"><img src="Imagens/LogoProto-On.png" alt="Proto-On" style="width: 200px; height: 50px"></a>
+        <a class="navbar-brand" href="index.php" title="Clique no Logo para ir ao inicio do Site"><img src="imagens/LogoProto-On.png" alt="Proto-On" style="width: 200px; height: 50px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -58,8 +58,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" title="Clique para acessar os serviços" role="button" data-bs-toggle="dropdown" aria-expanded="false">Serviços</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="reclamar.php" title="Abra uma reclamação">Abrir reclamação</a></li>
-                <li><a class="dropdown-item" href="consultar.php" title="Consulte seus protocolos">Consultar protocolos</a></li>
+                <li><a class="dropdown-item" href="/view/abrir_reclamacao.php" title="Abra uma reclamação">Abrir reclamação</a></li>
+                <li><a class="dropdown-item" href="/view/consultar.php" title="Consulte seus protocolos">Consultar protocolos</a></li>
               </ul>
             </li>
 
@@ -67,9 +67,9 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" title="Clique Mais Opções" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mais</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="contato.php" title="Saiba como nos contatar">Contato</a>
+                <li><a class="dropdown-item" href="/view/contato.php" title="Saiba como nos contatar">Contato</a>
                 </li>
-                <li><a class="dropdown-item" href="sobrenos.php" title="Saiba mais sobre nós">Sobre Nós</a>
+                <li><a class="dropdown-item" href="/view/sobre_nos.php" title="Saiba mais sobre nós">Sobre Nós</a>
                 </li>
               </ul>
             </li>
@@ -77,7 +77,7 @@
 
             <li class="nav-item">
               <button id="leitorBtn" onclick="iniciarLeitor()">
-                <img src="Imagens/altoFalante.png" alt="Leitor de Voz">
+                <img src="imagens/altoFalante.png" alt="Leitor de Voz">
               </button>
             </li>
 
@@ -88,7 +88,7 @@
             <form class="d-flex" role="search" style="margin-top: 10px;">
               <input class="form-control me-2" style="max-width: 200px; max-height: 30px;" type="search" placeholder="Pesquisar" title="Digite uma palavra de busca aqui" aria-label="Search">
               <button class="btn btn-outline-primary" type="submit" title="Clique para buscar" style="margin-left: 5px; background-color: whitesmoke; max-height: 30px;">
-                <img src="Imagens/Lupa.png" alt="Lupa" class="img-pesquisa" style="max-width: 20px; max-height: 20px; margin-top: -14px;">
+                <img src="imagens/Lupa.png" alt="Lupa" class="img-pesquisa" style="max-width: 20px; max-height: 20px; margin-top: -14px;">
               </button>
             </form>
           </div>
@@ -107,8 +107,7 @@
                       <ul>
                           <div class ='perfilMenu'>
                           <li><a href='view/updateMunicipe.php' style='font-weight: bold;'>Perfil</a></li>
-                          <li><a href='./historico-compra.php' style='font-weight: bold;'>Compras</a></li>
-                          <li><a href='./suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
+                          <li><a href='/view/suporte-cliente.php' style='font-weight: bold;'>Suporte</a></li>
                           <li><a href='controller/municipe/LogoutMunicipe.php' style='font-weight: bold;'>Sair</a></li>
                           </div>
                       </ul>
@@ -174,7 +173,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <script src="leitor.js"></script>
+    <!-- <script src="leitor.js"></script> -->
 
   </body>
 
