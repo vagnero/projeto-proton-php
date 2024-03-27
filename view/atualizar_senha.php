@@ -64,7 +64,7 @@ include_once '../controller/municipe/LoginMunicipe.php';
               $nova_senha = password_hash($dados['senha'], PASSWORD_DEFAULT);
               $nova_chave = password_hash($chave, PASSWORD_DEFAULT);;
 
-              $query_atualizar = "UPDATE municipes SET senha = ? WHERE id = ?";
+              $query_atualizar = "UPDATE municipes SET senha = ? WHERE idMunicipe = ?";
               $atualizar = $conn->prepare($query_atualizar);
               $atualizar->bind_param('si', $nova_senha, $row['idMunicipe']);
               

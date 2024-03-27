@@ -24,7 +24,7 @@ $cpf = $protected->getCpf();
 $email = $protected->getEmail();
 ?>
 
-<div class="body-form">
+<div class="body-form" style="padding-bottom: 20px">
   <h1 style="margin-top: 10px; font-size: 30px;">Editar Conta</h1>
 
   <form action="" method="post">
