@@ -61,7 +61,7 @@ class LoginMunicipe
                 }
                 header('Location: ../index.php');
             } else {
-                echo "<script>alert('Email e/ou Senha incorretos'); window.location.href='../../view/login.php';</script>";
+                echo "<script>alert('Email e/ou Senha incorretos'); window.location.href='../view/login.php';</script>";
                 // var_dump($result); //PARA TESTES 
             }
         }
